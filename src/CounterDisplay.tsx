@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { ReactLogo } from './ReactLogo';
 const CounterDisplay = ({ count }: { count: number }) => {
   console.info('CounterDisplay render');
   return (
@@ -11,6 +11,8 @@ const CounterDisplay = ({ count }: { count: number }) => {
     >
       <h1>Count value</h1>
       <h2>{count}</h2>
+
+      <ReactLogo />
     </div>
   );
 };
