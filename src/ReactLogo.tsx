@@ -1,7 +1,7 @@
 import React from 'react';
 import reactLogo from './assets/react.svg';
 
-const ReactLogo = () => {
+const ReactLogo = React.memo(() => {
   console.info('React Logo render');
 
   return (
@@ -10,6 +10,8 @@ const ReactLogo = () => {
       <img src={reactLogo} />;
     </div>
   );
-};
+});
+
+ReactLogo.displayName = 'ReactLogo';
 
 export { ReactLogo };
