@@ -5,7 +5,7 @@ const Counter = () => {
   const [count, setCount] = React.useState(0);
 
   return (
-    <div style={{ border: '2px solid hsl(26, 100%, 50%, 1)' }}>
+    <div style={{ border: '2px solid hsl(26, 100%, 50%, 1)', padding: '10px' }}>
       <CounterDisplay count={count} />
       <button
         onClick={() => {
