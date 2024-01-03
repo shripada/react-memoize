@@ -5,11 +5,11 @@ const CounterDisplay = ({ count }: { count: number }) => {
   console.info('CounterDisplay render');
 
   const listColor = count % 4 === 0 ? 'red' : 'green';
-  const devs = ['Kent C Dodds', 'Gullimero rauch', 'next js'];
 
   const reactLogoProps = React.useMemo(() => {
+    const devs = ['Kent C Dodds', 'Gullimero rauch', 'next js'];
     return { devs, listColor };
-  }, [listColor, devs]);
+  }, [listColor]);
   return (
     <div
       style={{
