@@ -1,11 +1,15 @@
 import React from 'react';
 import { ReactLogo } from './ReactLogo';
+
 const CounterDisplay = ({ count }: { count: number }) => {
   console.info('CounterDisplay render');
-  const devs = ['Kent C Dodds', 'Gullimero rauch', 'next js'];
-  const listColor = count % 4 === 0 ? 'red' : 'green';
 
-  const reactLogoProps = { devs, listColor };
+  const listColor = count % 4 === 0 ? 'red' : 'green';
+  const devs = ['Kent C Dodds', 'Gullimero rauch', 'next js'];
+
+  const reactLogoProps = React.useMemo(() => {
+    return { devs, listColor };
+  }, [listColor, devs]);
   return (
     <div
       style={{
