@@ -2,6 +2,10 @@ import React from 'react';
 import { ReactLogo } from './ReactLogo';
 const CounterDisplay = ({ count }: { count: number }) => {
   console.info('CounterDisplay render');
+  const devs = ['Kent C Dodds', 'Gullimero rauch', 'next js'];
+  const listColor = count % 4 === 0 ? 'red' : 'green';
+
+  const reactLogoProps = { devs, listColor };
   return (
     <div
       style={{
@@ -12,7 +16,7 @@ const CounterDisplay = ({ count }: { count: number }) => {
       <h1>Count value</h1>
       <h2>{count}</h2>
 
-      <ReactLogo />
+      <ReactLogo {...reactLogoProps} />
     </div>
   );
 };
