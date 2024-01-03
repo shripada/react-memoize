@@ -38,7 +38,7 @@ const Counter = () => {
     setFibCount(new Number(formObj['fibCount']).valueOf());
   }
 
-  const fibs = firstFibs(fibCount);
+  const fibs = React.useMemo(() => firstFibs(fibCount), [fibCount]);
 
   return (
     <div style={{ border: '2px solid hsl(26, 100%, 50%, 1)', padding: '10px' }}>
