@@ -1,5 +1,6 @@
 import React from 'react';
 import { CounterDisplay } from './CounterDisplay';
+import { CountBoost } from './CountBoost';
 
 function firstFibs(fibCount: number) {
   let f1 = 0,
@@ -39,6 +40,15 @@ const Counter = () => {
   }
 
   const fibs = React.useMemo(() => firstFibs(fibCount), [fibCount]);
+  //   const handleBoost = React.useMemo(
+  //     () => () => {
+  //       setCount(count + 100);
+  //     },
+  //     []
+  //   );
+  const handleBoost = React.useCallback(() => {
+    setCount(count + 100);
+  }, []);
 
   return (
     <div style={{ border: '2px solid hsl(26, 100%, 50%, 1)', padding: '10px' }}>
@@ -50,6 +60,7 @@ const Counter = () => {
       >
         ➕
       </button>
+      <CountBoost handleBoost={handleBoost} />
       <form onSubmit={handleSubmit}>
         <fieldset>
           <label htmlFor={inputId}> Number of fibs:</label>
