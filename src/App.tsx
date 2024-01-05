@@ -1,13 +1,15 @@
-import { useState } from 'react';
-import { Counter } from './Counter';
-import { Footer } from './Footer';
+import Banner from './Banner';
 import './App.css';
 
 function App() {
   return (
     <>
-      <Counter />
-      <Footer />
+      <Banner type="success" user={{ registrationStatus: 'loggedIn' }}>
+        User logged in successfully
+      </Banner>
+      <Banner type="failure" user={{ registrationStatus: 'non registered' }}>
+        User is not registered yet!
+      </Banner>
     </>
   );
 }
