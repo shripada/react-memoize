@@ -1,15 +1,22 @@
-import Banner from './Banner';
+import UserBanner from './UserBanner';
 import './App.css';
+import Banner from './Banner';
 
 function App() {
   return (
     <>
-      <Banner type="success" user={{ registrationStatus: 'loggedIn' }}>
+      <UserBanner type="success" user={{ registrationStatus: 'loggedIn' }}>
         User logged in successfully
-      </Banner>
-      <Banner type="failure" user={{ registrationStatus: 'non registered' }}>
+      </UserBanner>
+
+      <UserBanner
+        type="failure"
+        user={{ registrationStatus: 'non registered' }}
+      >
         User is not registered yet!
-      </Banner>
+      </UserBanner>
+
+      <Banner type="success">Normal banner</Banner>
     </>
   );
 }
